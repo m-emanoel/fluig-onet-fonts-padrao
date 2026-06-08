@@ -181,23 +181,8 @@ const roles = {
             ];
             
             //BUSCA GRUPO
-            return widgetretirada.roles.getDataset("ds_busca_users_group", constraint)
-			    .then(function (datasetgrupos) {
-			    	
-			    	var dsgrupo = datasetgrupos.values;
-			    	
-			    	return dsgrupo.length > 0;
-				
-			    })
-			    .catch(function (err) {
-			    	//ABRE AVISO
-					FLUIGC.toast({
-						title: 'Erro: ',
-						message: 'Ocorreu um problema. Entre em contato com o TI.',
-						type: 'danger'
-				    });
-					
-					console.error('Erro ao buscar grupo.', error);
-			    });
+            var dsgrupo = roles.getDataset("ds_busca_users_group", constraint);
+	    	
+	    	return dsgrupo.length > 0;
         },
 }
