@@ -1,4 +1,9 @@
- /* TABLE */
+/* FUNDO */
+body {
+	background-color: white !important;
+}
+
+/* TABLE */
 .firstRow {
     display: table-row;
 }
@@ -47,7 +52,7 @@ thead th {
   color: #cc3d3d;
 }
 
-/* BOTÕES */
+/* BOTÃ•ES */
 .btn {
 	border-radius: 15px !important;
 }
