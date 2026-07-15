@@ -102,6 +102,10 @@ section {
 	border: 0px !important;
 }
 
+.body-panel {
+	border-radius: 15px !important;
+}
+
 /* CAMPOS */
 input, select, .select2-selection, textarea { /* ZOOM */
 	border-radius: 8px !important;
