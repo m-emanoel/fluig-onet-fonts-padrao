@@ -126,7 +126,11 @@ input, select, .select2-selection, textarea { /* ZOOM */
 	min-height: var(--form-control-height) !important;
 }
 
-.addon-input {
+.addon-input-left {
+	border-radius: 8px 0px 0px 8px !important;
+}
+
+.input-addon-left {
 	border-radius: 0px 8px 8px 0px !important;
 }
 
