@@ -39,8 +39,10 @@ const roles = {
 		
 		loading: FLUIGC.loading(window),
 
-		alertTI: FLUIGC.toast({title: 'Erro: ', message: 'Ocorreu um problema. Entre em contato com o TI.', type: 'danger'}),
-		
+		alertTI: (classe) => {
+			FLUIGC.toast({title: 'Erro: ', message: 'Ocorreu um problema. Entre em contato com o TI.', type: 'danger'})
+		},
+	
 		UPPERCASE: (campo) => {
 			$(campo).val(campo.val().toUpperCase());
 		},
