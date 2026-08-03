@@ -173,7 +173,21 @@ const roles = {
 
 			return (dsdoc != null && dsdoc.values.length > 0) ? dsdoc.values[0]["documentPK.version"] : "1000";
 		},
-		
+
+		/*
+		 * BUSCA USUÁRIO PELA MATRICULA
+		 */
+		getUser: function (user) {
+			
+			var constraint = [
+		        DatasetFactory.createConstraint("colleaguePK.colleagueId", user, user, ConstraintType.MUST),
+		        DatasetFactory.createConstraint("active", true, true, ConstraintType.MUST)
+		    ];
+			
+			var dsUser  = roles.getDataset("colleague", constraint);
+			
+			return (dsUser != null && dsUser.length > 0) ? dsUser[0] : null;
+		},
 
         /*
          * VERIFICA SE USUARIO FAZ PARTE DO GRUPO
@@ -189,4 +203,36 @@ const roles = {
 	    	
 	    	return dsgrupo.length > 0;
         },
+
+		/* -------------------------- MASK ----------------------------*/
+
+		/*
+		 * MASCARA QUANTIDADE
+		 */
+		maskQtd: (campo) => {
+			
+			//VERIFICA SE A QUANTIDADE É NEGATIVA
+			if (campo.value < 0) {
+				
+				//PASSA VALOR 0 
+				campo.value = 0;
+			}
+		},
+		
+		/*
+		 * MASCARA VALOR
+		 */
+		maskMoney: (campo) => {
+		
+			//REMOVE O QUE NÃO FOR NUMERO
+			var valor = campo.value.replace(/\D/g,'');
+			
+			//FORMATA PARA VALOR EM DINHEIRO (R$)
+			valor = (valor/100).toFixed(2) + '';
+			valor = valor.replace(".", ",");
+			valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+			
+			//ARMAZENA VALOR NO CAMPO
+			campo.value = valor;
+	    },
 }
