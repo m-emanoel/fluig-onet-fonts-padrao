@@ -44,7 +44,7 @@ const roles = {
 		},
 	
 		UPPERCASE: (campo) => {
-			$(campo).val(campo.val().toUpperCase());
+			$(campo).val($(campo).val().toUpperCase());
 		},
 		
 		/* -------------------------- ZOOM ----------------------------*/
