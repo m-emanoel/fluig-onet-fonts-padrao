@@ -197,6 +197,12 @@ h4 {
 	text-align: center !important;
 }
 
+.col-mdxsm {
+	min-width: 200px !important;
+	max-width: 390px !important;
+	text-align: center !important;
+}
+
 .col-small {
 	min-width: 150px !important;
 	max-width: 250px !important;
