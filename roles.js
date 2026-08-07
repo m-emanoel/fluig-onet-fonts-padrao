@@ -26,11 +26,11 @@ const roles = {
 		},
 		
 		addDisabled: (classe) => {
-			$("." + classe).css("pointer-events", "none");
+			$("." + classe).css("pointer-events", "none").attr("readonly", "readonly");
 		},
 		
 		removeDisabled: (classe) => {
-			$("." + classe).css("pointer-events", "auto");
+			$("." + classe).css("pointer-events", "auto").removeAttr("readonly");
 		},
 		
 		removeClass: (classe) => {
