@@ -235,4 +235,27 @@ const roles = {
 			//ARMAZENA VALOR NO CAMPO
 			campo.value = valor;
 	    },
+
+		/*
+		* MASCARA PORCENTAGEM
+		*/
+		maskPercent: (campo) => {
+		
+		    // REMOVE O QUE NÃO FOR NUMERO
+		    var valor = campo.value.replace(/\D/g, '');
+		
+		    // FORMATA PARA PORCENTAGEM COM 2 CASAS DECIMAIS
+		    valor = (valor / 100).toFixed(2);
+		
+		    // LIMITA EM 100%
+		    if (parseFloat(valor) > 100) {
+		        valor = '100.00';
+		    }
+		
+		    // TROCA PONTO POR VIRGULA
+		    valor = valor.replace(".", ",");
+		
+		    // ARMAZENA VALOR NO CAMPO
+		    campo.value = valor;
+		},
 }
